@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_header %}
+<div class="container-fluid site-title">
+    Portfolio
+</div>
+{% endblock %}
+{% block page_content %}
+<style>
+    .card-deck {
+        margin-top: 10px;
+        margin-left: auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        grid-gap: 1.5rem;
+    }
+
+    a:link {
+        color: black;
+        background-color: transparent;
+        text-decoration: none;
+    }
+
+    .card-body {
+        background: rgba(255, 252, 252, 0.09);
+    }
+</style>
+
+<div class="card-deck">
+    {% for portfolio in portfolios %}
+    <div class="card">
+        <a href="{% url 'portfolio_detail' portfolio.pk %}">
+            <img class="card-img-top" src="{{ portfolio.image.url }}">
+            <div class="card-body">
+                <h3 class="card-title">{{ portfolio.title }}</h3>
+        </a>
+        <p class="card-text">{{ portfolio.description }}</p>
+    </div>
+</div>
+{% endfor %}
+</div>
+{% endblock %}

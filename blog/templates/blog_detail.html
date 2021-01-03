@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load markdown_extras %}
+{% block page_header %}
+<div class="container-fluid site-title">
+    {{ post.title }}
+    <p class="lead">{{post.description}}</p>
+    <p class="lead">
+        {{ post.created_on.date }} |&nbsp;
+        Categories:&nbsp;
+        {% for category in post.categories.all %}
+        <a href="{% url 'blog_category' category.name %}">
+            {{ category.name }}
+        </a>&nbsp;
+        {% endfor %}
+    </p>
+</div>
+{% endblock %}
+{% block page_content %}
+
+<div class="col-md-8 offset-md-2">
+    <img src="{{ post.image.url }}" width=100%>
+    <hr>
+    <div class="text-white">{{ post.body | markdown |safe }}</div>
+    <hr>
+    <h3 class="text-white">Leave a comment:</h3>
+    <form action="/{{post.pk}}/" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ form.author }}
+        </div>
+        <div class="form-group">
+            {{ form.body }}
+        </div>
+        <button type="submit" class="btn btn-dark">Submit</button>
+    </form>
+    <hr>
+    <h3 class="text-white">Comments:</h3>
+    {% for comment in comments %}
+    <p class="text-white">
+        On {{comment.created_on.date }}&nbsp;
+        <b>{{ comment.author }}</b> wrote:
+    </p>
+    <p class="text-primary">{{ comment.body }}</p>
+    <hr>
+    {% endfor %}
+</div>
+{% endblock %}

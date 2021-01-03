@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_header %}
+<div class="container-fluid site-title">
+    Subscribe!
+</div>
+{% endblock %}
+
+{% block page_content %}
+<div>
+    <form action="{% url 'subscribe' %}" method="post">
+        {% csrf_token %}
+        <form>
+            <div class="form-group">
+                <label class="text-white">Name:     </label>
+                {{form.name}}
+            </div>
+            <div class="form-group">
+                <label class="text-white" for="InputEmail">Email address: </label>
+                {{form.email}}
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+</div>
+{% endblock %}
