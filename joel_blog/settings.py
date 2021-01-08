@@ -28,7 +28,7 @@ SECRET_KEY = '@^fq_3*=yqyv=+a-yeb+-psk0q(uq39sd=*qib+h+puwmhmitv'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['3.14.87.251', 'ec2-3-14-87-251.us-east-2.compute.amazonaws.com', 'localhost', '18.221.181.41']
+ALLOWED_HOSTS = ['3.14.87.251', 'ec2-3-14-87-251.us-east-2.compute.amazonaws.com', 'localhost', '18.221.181.41', 'www.joelreji.com', 'joelreji.com']
 
 
 # Application definition
