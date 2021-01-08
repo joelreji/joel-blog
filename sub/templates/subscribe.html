@@ -7,19 +7,33 @@
 {% endblock %}
 
 {% block page_content %}
+
+<style>
+    .messages {
+        color: white;
+    }
+</style>
 <div>
     <form action="{% url 'subscribe' %}" method="post">
         {% csrf_token %}
         <form>
             <div class="form-group">
-                <label class="text-white">Name:     </label>
+                <label class="text-white">Name: </label>
                 {{form.name}}
             </div>
             <div class="form-group">
-                <label class="text-white" for="InputEmail">Email address: </label>
+                <label class="text-white" id="email">Email address: </label>
                 {{form.email}}
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
 </div>
+
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li class="{{ message.tags }}">{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
 {% endblock %}
