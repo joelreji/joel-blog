@@ -23,7 +23,7 @@
     <div class="text-white">{{ post.body | markdown |safe }}</div>
     <hr>
     <nav>
-        <ul class="pagination justify-content-end">
+        <ul class="pagination justify-content-center">
             {% if post.get_previous_by_created_on %}
             <li class="page-item">
                 <a class="page-link bg-dark text-white" href="/{{post.get_previous_by_created_on.pk}}"> ❮ {{ post.get_previous_by_created_on.created_on.date }}</a>
