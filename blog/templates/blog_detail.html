@@ -4,15 +4,13 @@
 <div class="container-fluid site-title">
     {{ post.title }}
     <p class="lead">{{post.description}}</p>
-    <p class="lead">
-        {{ post.created_on.date }} |&nbsp;
-        Categories:&nbsp;
-        {% for category in post.categories.all %}
+    <p class="lead"> Categories: {% for category in post.categories.all %}
         <a href="{% url 'blog_category' category.name %}">
             {{ category.name }}
         </a>&nbsp;
         {% endfor %}
     </p>
+    <p class="lead">{{ post.created_on.date }} </a>&nbsp;
 </div>
 {% endblock %}
 {% block page_content %}
@@ -52,11 +50,11 @@
     <hr>
     <h3 class="text-white">Comments:</h3>
     {% for comment in comments %}
-    <p class="text-white">
+    <p class="text-success">
         On {{comment.created_on.date }}&nbsp;
         <b>{{ comment.author }}</b> wrote:
     </p>
-    <p class="text-primary">{{ comment.body }}</p>
+    <div class="text-white">{{ comment.body | markdown |safe }}</div>
     <hr>
     {% endfor %}
 </div>
