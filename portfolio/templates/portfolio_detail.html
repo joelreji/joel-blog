@@ -3,20 +3,18 @@
 {% load static %}
 
 {% block page_content %}
-<hr>
-<h1 class="text-white">{{ portfolio.title }}</h1>
-<hr>
+<h1 class="display-1 text-bold">{{ portfolio.title }}</h1>
 <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-8 pb-3">
         <img src="{{ portfolio.image.url }}" alt="" width="100%">
     </div>
-    <div class="col-md-4 text-white">
+    <div class="col-md-4 text-black">
         <h5>About the project:</h5>
         <p>{{ portfolio.description }}</p>
         <br>
         <h5>Technology used:</h5>
         <p>{{ portfolio.technology }}</p>
-        <a type="button" href="{{ portfolio.prodUrl }}" class="btn btn-dark">Production Link</a>
+        <a type="button" href="{{ portfolio.prodUrl }}" class="btn btn-dark mb-3">Production Link</a>
     </div>
 </div>
 {% endblock %}

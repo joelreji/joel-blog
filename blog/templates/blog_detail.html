@@ -19,15 +19,9 @@
 <meta property="og:image:width" content="1000">
 <meta property="og:image:height" content="500">
 
-<div class="container-fluid site-title">
-    {{ post.title }}
+<div class="container">
+    <h1 class="display-1 text-bold pt-5">{{ post.title }}</h1>
     <p class="lead">{{post.description}}</p>
-    <p class="lead"> Categories: {% for category in post.categories.all %}
-        <a href="{% url 'blog_category' category.name %}">
-            {{ category.name }}
-        </a>&nbsp;
-        {% endfor %}
-    </p>
     <p class="lead">{{ post.created_on.date }} </a>&nbsp;
 </div>
 {% endblock %}
@@ -68,7 +62,7 @@
     <hr>
     <h3 class="text-black">Comments:</h3>
     {% for comment in comments %}
-    <p class="text-success">
+    <p class="text-black text-bold">
         On {{comment.created_on.date }}&nbsp;
         <b>{{ comment.author }}</b> wrote:
     </p>

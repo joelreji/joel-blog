@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 {% load markdown_extras %}
 {% block page_header %}
-<div class="container-fluid site-title">
-    Category: {{ category | title }}
+
+<div class="container">
+    <h1 class="display-1 text-bold pt-5">Category: {{ category | title }}</h1>
 </div>
 {% endblock %}
 

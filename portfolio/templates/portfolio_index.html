@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
 {% block page_header %}
-<div class="container-fluid site-title">
-    Portfolio
+<div class="container">
+    <h1 class="display-1 text-bold pt-5">Portfolio</h1>
 </div>
 {% endblock %}
 {% block page_content %}
@@ -28,7 +28,7 @@
 
 <div class="card-deck">
     {% for portfolio in portfolios %}
-    <div class="card">
+    <div class="card mb-3">
         <a href="{% url 'portfolio_detail' portfolio.pk %}">
             <img class="card-img-top" src="{{ portfolio.image.url }}">
             <div class="card-body">

@@ -19,95 +19,65 @@
 <meta property="og:image:width" content="1000">
 <meta property="og:image:height" content="500">
 
-<style>
-    .site-title-main {
-        margin: 60px 0px 0px 0px;
-        font-size: 250%;
-        line-height: 200%;
-        font-weight: 100%;
-        text-align: left;
-    }
-
-    .lead-main {
-        line-height: 100%;
-        text-align: left;
-        font-size: 50%;
-    }
-</style>
-<div class="container-fluid site-title-main">
-    Stay in the loop!
-    <p class="lead lead-main">For updates on all things Technology and Economics, subscribe to my weekly email chain!</p>
+<div class="container">
+    <h1 class="display-1 text-bold pt-5">Welcome!</h1>
+    
 </div>
 {% endblock %}
 
 {% block page_content %}
-<style>
-    .card-body {
-        background: rgba(255, 252, 252, 0.09);
-    }
-</style>
-<div class="card flex-row flex-wrap">
-    {% for post in posts|slice:":1" %}
-    <a href="{% url 'blog_detail' post.pk%}">
-        <div class="card-header border-0">
-            <img src="{{ post.image.url }}" alt="" width="100%">
+<div class="row mb-2">
+    <div class="col-md-6">
+        {% for post in posts|slice:":1" %}
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+                <strong class="d-inline-block mb-2 text-primary">
+                    <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;">Featured post</font>
+                    </font>
+                </strong>
+                <h3 class="mb-0">
+                    <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;">{{ post.title }}</font>
+                    </font>
+                </h3>
+                <div class="mb-1 text-muted">
+                    <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;"></font>{{ post.created_on.date }}
+                    </font>
+                </div>
+                <p class="card-text mb-auto">
+                    <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;"></font>{{ post.description }}
+                    </font>
+                </p>
+                <a href="{% url 'blog_detail' post.pk%}" class="stretched-link">
+                    <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;">Continue reading</font>
+                    </font>
+                </a>
+            </div>
+            <div class="col-auto d-none d-lg-block">
+                <img src="{{ post.image.url }}" alt="" width="100%" height=250>
+
+
+            </div>
         </div>
-        <div class="card-block px-2">
-            <h3 class="card-title" href="{% url 'blog_detail' post.pk%}">{{ post.title }}</h3>
-    </a>
-    <p class="card-text">{{ post.description }}</p>
-    <h7>
-        <a>Tags: </a>
-        {% for category in post.categories.all %}
-        <a href="{% url 'blog_category' category.name %}">
-            {{ category.name }}
-        </a>&nbsp;
-    </h7>
-    {% endfor %}
-</div>
-<div class="w-100"></div>
-<div class="card-footer w-100 text-muted">
-    {{ post.created_on.date }}
-</div>
-{% endfor %}
-</div>
-
-<style>
-    .card-deck {
-        margin-top: 10px;
-        margin-left: auto;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        grid-gap: 1.5rem;
-    }
-
-    a:link {
-        color: black;
-        background-color: transparent;
-        text-decoration: none;
-    }
-</style>
-<div class="card-deck">
-    {% for post in posts|slice:"1:" %}
-    <div class="card">
-        <a href="{% url 'blog_detail' post.pk%}">
-            <img class="card-img-top" src="{{ post.image.url }}">
-            <div class="card-body">
-                <h3 class="card-title">{{ post.title }}</h3>
-        </a>
-        <p class="card-text">{{ post.description }}</p>
-        <h7>
-            <a>Tags: </a>
-            {% for category in post.categories.all %}
-            <a href="{% url 'blog_category' category.name %}">
-                {{ category.name }}&nbsp;
-            </a>
-        </h7>
         {% endfor %}
     </div>
-    <div class="card-footer">
-        <small class="text-muted">{{ post.created_on.date }}</small>
+
+    <div class="col-md-6">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+                <strong class="d-inline-block mb-2 text-success">Featured project</strong>
+                <h3 class="mb-0">Insurance Loss Ratio Prediction</h3>
+                <p class="mb-auto">Built various models to predict the loss ratio of various insurance portfolios so that the insurance firm can better price its policies.</p>
+                <a href="https://github.com/joelreji/Insurance-Policy-Loss-Prediction" class="stretched-link">Github page</a>
+            </div>
+            <div class="col-auto d-none d-lg-block">
+                <img src="/media/images/pexels-karolina-grabowska-4386375.jpg" alt="" width="100%" height=250>
+            </div>
+        </div>
     </div>
 </div>
-{% endfor %}
 {% endblock %}

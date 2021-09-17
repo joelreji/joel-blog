@@ -1,5 +1,9 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
   integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 
 <style>
   .navbar {
@@ -8,7 +12,9 @@
 </style>
 
 <head>
+
   <!-- Global site tag (gtag.js) - Google Analytics -->
+
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y2DCR6N5Z6"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -17,7 +23,7 @@
     gtag('config', 'G-Y2DCR6N5Z6');
   </script>
 
-<!-- Meta tags for search engines -->
+  <!-- Meta tags for search engines -->
   <title>Joel Reji</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Personal website with content about Economics, Finance, and Technology.">
@@ -25,60 +31,95 @@
   <meta name="docsearch:language" content="en">
   <link rel="canonical" href="https://joelreji.com/">
 </head>
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-  <a class="navbar-brand" href="{% url 'blog_index' %}">JOEL REJI</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarCollapse">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'portfolio_index' %}">Portfolio</span></a></a>
-      </li>
-    </ul>
-    <ul class="navbar-nav navbar-right">
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'subscribe' %}">Subscribe</a>
-      </li>
-    </ul>
-  </div>
-</nav>
-
 <style>
-  .site-title {
-    z-index: 10;
-    margin: 50px 0px 0px 0px;
-    padding: 0px;
-    font-size: 300%;
-    line-height: 125%;
-    font-weight: 300;
-  }
-
-  .jumbotron {
-    background: #000000;
-    text-align: center;
-    color: white;
+  .main-log {
+    font-size: x-large;
   }
 </style>
 
-<div class="jumbotron jumbotron-fluid">
-  {% block page_header %}
-  {% endblock %}
+<body>
+  <!--
+  <div class="container">
+    <header class="blog-header py-3">
+      <div class="row flex-nowrap justify-content-between align-items-center">
+        <div class="col-3 pt-1">
+          <a class="btn btn-sm" href="{% url 'portfolio_index' %}">Portfolio</a>
 
-</div>
+        </div>
+        <div class="col-4 text-center">
+          <a class="blog-header-logo text-dark main-log" href="/">Joel Reji</a>
+        </div>
+        <div class="col-4 d-flex justify-content-end align-items-center">
+          <a class="btn btn-sm btn-outline-secondary" href="{% url 'subscribe' %}">Subscribe!</a>
+        </div>
+      </div>
+    </header>
+  -->
 
-<div class="container">
+  <header class="navbar navbar-expand-md navbar-dark bd-navbar fixed-top">
+    <nav class="container-xxl flex-wrap flex-md-nowrap" aria-label="Main navigation">
+      <a class="navbar-brand" href="{% url 'blog_index' %}">JOEL REJI</a>
+      <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#bdNavbar"
+        aria-controls="bdNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" class="bi" fill="currentColor"
+          viewBox="0 0 16 16">
+          <path fill-rule="evenodd"
+            d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z">
+          </path>
+        </svg>
+      </button>
+      <div class="collapse navbar-collapse" id="bdNavbar">
+        <ul class="navbar-nav flex-wrap bd-navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'portfolio_index' %}">Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'subscribe' %}">Subscribe</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
   <style>
-    body {
-      background-color: #ffffff;
+    .jumbotron {
+      background-color: #000000;
+      color: #ffffff;
+    }
+
+    .site-title {
+      font-size: 250%;
+      line-height: 300%;
+      font-weight: 100%;
+      text-align: left;
     }
   </style>
-  {% block page_content %}
-  {% endblock %}
+
+  <div class="jumbotron">
+    {% block page_header %}
+    {% endblock %}
+
+  </div>
+
+  <div class="container">
+    <style>
+      body {
+        background-color: #ffffff;
+      }
+    </style>
+    {% block page_content %}
+    {% endblock %}
+  </div>
+</body>
+
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="display-1 text-bold pt-5 mb-5">Stay in the loop!</h1>
+    <h6 class="text-white-soft text-regular">For updates on all things Technology and Economics, subscribe to my weekly
+      email chain!</h5>
+      <a href="{% url 'subscribe' %}" class="btn btn-dark mt-3 col-sm-4" type="button">Subscribe</a>
+  </div>
 </div>
-
-
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
   integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
