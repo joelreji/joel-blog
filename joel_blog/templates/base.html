@@ -113,12 +113,8 @@
 </body>
 
 <div class="jumbotron">
-  <div class="container">
-    <h1 class="display-1 text-bold pt-5 mb-5">Stay in the loop!</h1>
-    <h6 class="text-white-soft text-regular">For updates on all things Technology and Economics, subscribe to my weekly
-      email chain!</h5>
-      <a href="{% url 'subscribe' %}" class="btn btn-dark mt-3 col-sm-4" type="button">Subscribe</a>
-  </div>
+  {% block page_footer %}
+  {% endblock %}
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
   integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

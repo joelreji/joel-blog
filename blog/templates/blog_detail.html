@@ -71,3 +71,12 @@
     {% endfor %}
 </div>
 {% endblock %}
+
+{% block page_footer %}
+<div class="container">
+    <h1 class="display text-bold pt-5 ">Stay in the loop!</h1>
+    <h6 class="text-white-soft text-regular">For updates on all things Technology and Economics, subscribe to my weekly
+      email chain!</h5>
+      <a href="{% url 'subscribe' %}" class="btn btn-dark mt-2 col-sm-4">Subscribe</a>
+  </div>
+  {% endblock %}
