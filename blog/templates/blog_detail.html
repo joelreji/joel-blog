@@ -36,7 +36,7 @@
 <div class="contianer-fluid">
     <img src="{{ post.image.url }}" width=100%>
     <hr>
-    <div class="text-white">{{ post.body | markdown |safe }}</div>
+    <div class="text-black">{{ post.body | markdown |safe }}</div>
     <hr>
     <nav>
         <ul class="pagination justify-content-center">
@@ -54,7 +54,7 @@
             {% endif %}
         </ul>
     </nav>
-    <h3 class="text-white">Leave a comment:</h3>
+    <h3 class="text-black">Leave a comment:</h3>
     <form action="/{{post.pk}}/" method="post">
         {% csrf_token %}
         <div class="form-group">
@@ -66,13 +66,13 @@
         <button type="submit" class="btn btn-dark">Submit</button>
     </form>
     <hr>
-    <h3 class="text-white">Comments:</h3>
+    <h3 class="text-black">Comments:</h3>
     {% for comment in comments %}
     <p class="text-success">
         On {{comment.created_on.date }}&nbsp;
         <b>{{ comment.author }}</b> wrote:
     </p>
-    <div class="text-white">{{ comment.body | markdown |safe }}</div>
+    <div class="text-black">{{ comment.body | markdown |safe }}</div>
     <hr>
     {% endfor %}
 </div>
