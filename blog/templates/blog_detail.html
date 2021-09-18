@@ -11,7 +11,7 @@
 
 <!-- Facebook -->
 <meta property="og:url" content="https://joelreji.com/">
-<meta property="og:title" content="{{post.description}}">
+<meta property="og:title" content="{{post.title}}">
 <meta property="og:description" content="{{post.description}}">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://joelreji.com{{ post.image.url }}"">
@@ -22,7 +22,8 @@
 <div class="container">
     <h1 class="display-1 text-bold pt-5">{{ post.title }}</h1>
     <p class="lead">{{post.description}}</p>
-    <p class="lead">{{ post.created_on.date }} </a>&nbsp;
+    <p class="lead">{{ post.created_on.date }} </a>&nbsp;</p>
+    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="{{ post.title }}" data-url="https://joelreji.com/{{post.pk}}/" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
 {% endblock %}
 {% block page_content %}
@@ -31,7 +32,7 @@
     <img src="{{ post.image.url }}" width=100%>
     <hr>
     <div class="text-black">{{ post.body | markdown |safe }}</div>
-    <hr>
+    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="{{ post.title }}" data-url="https://joelreji.com/{{post.pk}}/" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <nav>
         <ul class="pagination justify-content-center">
             {% if post.get_previous_by_created_on %}
@@ -77,6 +78,6 @@
     <h1 class="display text-bold pt-5 ">Stay in the loop!</h1>
     <h6 class="text-white-soft text-regular">For updates on all things Technology and Economics, subscribe to my weekly
       email chain!</h5>
-      <a href="{% url 'subscribe' %}" class="btn btn-dark mt-2 col-sm-4">Subscribe</a>
+      <a href="{% url 'subscribe' %}" class="btn btn-light mt-2 col-sm-4">Subscribe</a>
   </div>
   {% endblock %}
