@@ -14,7 +14,7 @@
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         grid-gap: 1.5rem;
     }
-    
+
     a:link {
         color: black;
         text-decoration: none;
@@ -44,8 +44,8 @@
 {% block page_footer %}
 <div class="container">
     <h1 class="display text-bold pt-5 ">Stay in the loop!</h1>
-    <h6 class="text-white-soft text-regular">For updates on all things Technology and Economics, subscribe to my mailing
-        list!</h5>
-        <a href="{% url 'subscribe' %}" class="btn btn-light mt-2 col-sm-4 over       ">Subscribe</a>
+    <h6 class="text-white-soft text-regular">For updates on all things Technology and Economics, subscribe to my weekly
+        email.</h5>
+        <a href="{% url 'subscribe' %}" class="btn btn-light mt-2 col-sm-4">Subscribe</a>
 </div>
 {% endblock %}
