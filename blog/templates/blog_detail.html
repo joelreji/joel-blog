@@ -34,7 +34,7 @@
     <div class="text-black">{{ post.body | markdown |safe }}</div>
     <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="{{ post.title }}" data-url="https://joelreji.com/{{post.pk}}/" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <nav>
-        <ul class="pagination justify-content-center">
+        <ul class="pagination justify-content-center pt-3">
             {% if post.get_previous_by_created_on %}
             <li class="page-item">
                 <a class="page-link bg-dark text-white" href="/{{post.get_previous_by_created_on.pk}}"> ❮ {{ post.get_previous_by_created_on.created_on.date }}</a>
