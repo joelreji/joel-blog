@@ -3,7 +3,7 @@
 {% block page_header %}
 
 <div class="container">
-    <h1 class="display-1 text-bold pt-5">Category: {{ category | title }}</h1>
+    <h1 class="display-1 text-bold pt-5"> {{ category | title }}</h1>
 </div>
 {% endblock %}
 
@@ -19,12 +19,11 @@
 
     a:link {
         color: black;
-        background-color: transparent;
         text-decoration: none;
     }
 </style>
 
-<div class="card-deck">
+<div class="card-deck mb-3">
     {% for post in posts %}
     <div class="card">
         <a href="{% url 'blog_detail' post.pk%}">
@@ -53,8 +52,8 @@
 {% block page_footer %}
 <div class="container">
     <h1 class="display text-bold pt-5 ">Stay in the loop!</h1>
-    <h6 class="text-white-soft text-regular">For updates on all things Technology and Economics, subscribe to my mailing
-        list!</h5>
+    <h6 class="text-white-soft text-regular">For updates on all things Technology and Economics, subscribe to my weekly
+        email chain!</h5>
         <a href="{% url 'subscribe' %}" class="btn btn-light mt-2 col-sm-4">Subscribe</a>
 </div>
-  {% endblock %}
+{% endblock %}
