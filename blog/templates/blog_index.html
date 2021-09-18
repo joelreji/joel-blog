@@ -20,7 +20,7 @@
 <meta property="og:image:height" content="500">
 
 <div class="container">
-    <h1 class="display-1 text-bold pt-5">Welcome!</h1>
+    <h1 class="display-1 text-bold pt-5">Welcome</h1>
 
 </div>
 {% endblock %}
@@ -86,7 +86,7 @@
 <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
     <div class="col-md-5 p-lg-5 mx-auto my-5">
         <h1 class="display-4 font-weight-normal">Explore</h1>
-        <p class="lead font-weight-normal">Select your favorite topic to see relevent posts. </p>
+        <p class="lead font-weight-normal">Select your favorite topic. </p>
         {% for category in categories %}
         <a class="btn btn-outline-secondary mb-2" href="{% url 'blog_category' category.name %}">{{ category.name }}</a>
         {% endfor %}
