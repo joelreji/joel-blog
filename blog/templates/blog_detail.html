@@ -20,10 +20,10 @@
 <meta property="og:image:height" content="500">
 
 <div class="container">
-    <h1 class="display-1 text-bold pt-5">{{ post.title }}</h1>
+    <h1 class="display-3 text-bold pt-5 pb-4">{{ post.title }}</h1>
     <p class="lead">{{post.description}}</p>
-    <p class="lead">{{ post.created_on.date }} </a>&nbsp;</p>
-    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="Check out this post!" data-url="https://joelreji.com/{{post.pk}}/" data-show-count="false">Tweet</a>
+    <p class="text-small">{{ post.created_on.date }} </a>&nbsp;</p>
+    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="small" data-text="Check out this post!" data-url="https://joelreji.com/{{post.pk}}/" data-show-count="false">Tweet</a>
 </div>
 {% endblock %}
 {% block page_content %}
