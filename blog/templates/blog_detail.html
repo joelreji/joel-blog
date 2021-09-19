@@ -50,7 +50,8 @@
         </ul>
     </nav>
     <h3 class="text-black">Leave a comment:</h3>
-    <form action="/{{post.pk}}/" method="post">
+    <a href="https://www.markdownguide.org/basic-syntax/" class="link-success text-small">Markdown</a>
+    <form class="pt-3" action="/{{post.pk}}/" method="post">
         {% csrf_token %}
         <div class="form-group">
             {{ form.author }}
