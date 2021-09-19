@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     'portfolio',
     'blog',
     'sub',
-    'crispy_forms'
 ]
 
 MIDDLEWARE = [
@@ -75,8 +74,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'joel_blog.wsgi.application'
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
-
 
 
 # Database
