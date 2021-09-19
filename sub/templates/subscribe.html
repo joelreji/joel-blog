@@ -15,7 +15,7 @@
     }
 </style>
 <div>
-    <form action="{% url 'subscribe' %}" method="post">
+    <form onsubmit="openModal()" id="subForm" action="{% url 'subscribe' %}" method="post">
         {% csrf_token %}
         <div class="text-left mb-4">
             <p>Get quality content right to your mailbox.</p>
@@ -29,17 +29,37 @@
                 <label class="text-black text-bold" id="email">Email address </label>
                 {{form.email}}
             </div>
-            <button type="submit" class="btn btn-dark">Submit</button>
+            <button type="submit" class="btn btn-dark" data-toggle="modal" data-target="#myModal">Submit</button>
         </form>
     </form>
 </div>
 
-
 {% if messages %}
-<ul class="messages">
-    {% for message in messages %}
-    <li class="{{ message.tags }}">{{ message }}</li>
-    {% endfor %}
-</ul>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Thank You!</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        {% for message in messages %}
+        <div class="modal-body" >
+            {{ message }}
+        </div>
+        {% endfor %}
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+  </div>
 {% endif %}
 {% endblock %}
+
+<script>
+$('#subForm').on('submit', function(e){
+    $('#myModal').modal('show');
+    e.preventDefault();
+  });
+</script>
