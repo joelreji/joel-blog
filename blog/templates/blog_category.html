@@ -1,6 +1,23 @@
 {% extends "base.html" %}
 {% load markdown_extras %}
 {% block page_header %}
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@Joel_Reji">
+<meta name="twitter:creator" content="@Joel_Reji">
+<meta name="twitter:title" content="Topic: {{ category | title }}">
+<meta name="twitter:description" content="Personal website with content about Economics, Finance, and Technology.">
+<meta name="twitter:image" content="https://joelreji.com/media/images/pexels-pixabay-159711.jpg">
+
+<!-- Facebook -->
+<meta property="og:url" content="https://joelreji.com/">
+<meta property="og:title" content="Topic: {{ category | title }}">
+<meta property="og:description" content="Personal website with content about Economics, Finance, and Technology.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://joelreji.com/media/images/pexels-pixabay-159711.jpg">
+<meta property="og:image:type" content="image/jpg">
+<meta property="og:image:width" content="1000">
+<meta property="og:image:height" content="500">
 
 <div class="container">
     <h1 class="display-1 text-bold pt-5 text-uppercase"> {{ category | title }}</h1>
