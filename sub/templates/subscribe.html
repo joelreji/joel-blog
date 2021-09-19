@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 {% block page_header %}
 <div class="container">
@@ -20,7 +21,7 @@
         <div class="text-left mb-4">
             <p>Get quality content right to your mailbox.</p>
         </div>
-        {{form}}
+        {{form |crispy}}
 
         <button type="submit" class="btn btn-dark">Submit</button>
 
