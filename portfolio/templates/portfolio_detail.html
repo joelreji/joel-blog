@@ -2,6 +2,23 @@
 {% load static %}
 
 {% block page_content %}
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@Joel_Reji">
+<meta name="twitter:creator" content="@Joel_Reji">
+<meta name="twitter:title" content="{{ portfolio.title }}">
+<meta name="twitter:description" content="Personal Portfolio with recent projects.">
+<meta name="twitter:image" content="{{ portfolio.image.url }}">
+<!-- Facebook -->
+<meta property="og:url" content="https://joelreji.com/">
+<meta property="og:title" content="{{ portfolio.title }}>
+<meta property="og:description" content="Personal Portfolio with recent projects.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="{{ portfolio.image.url }}">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1000">
+<meta property="og:image:height" content="500">
+
 <h1 class="display-1 text-bold">{{ portfolio.title }}</h1>
 <div class="row">
     <div class="col-md-8 pb-3">
